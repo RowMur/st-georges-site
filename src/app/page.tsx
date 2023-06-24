@@ -155,8 +155,9 @@ const Home = () => {
           </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.061692689269!2d0.13987197758941497!3d52.22409695809388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d870f83a147275%3A0xd83b666dae161c6f!2sSt%20Georges%20Table%20tennis%20club!5e0!3m2!1sen!2suk!4v1687599768637!5m2!1sen!2suk"
-            width="600"
+            // width="600"
             height="450"
+            className="w-4/5 md:w-2/4"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"
