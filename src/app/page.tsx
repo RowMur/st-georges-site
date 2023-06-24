@@ -92,7 +92,7 @@ const Home = () => {
             </p>
             <div className="my-3">
               {sessions.map((session) => (
-                <div className="container my-2" key={session.day}>
+                <div className="container my-2 text-center" key={session.day}>
                   <p>
                     {session.day} {session.time}
                   </p>
@@ -145,10 +145,10 @@ const Home = () => {
         >
           <div className="w-4/5 md:w-2/4 px-2 my-2">
             <h1 className="text-center font-bold text-lg">Where to Find Us</h1>
-            <p className="text-center font-light text-xs">
+            <p className="text-center font-light my-1">
               St George&apos;s Church Hall Chesterfield Road Cambridge CB4 1LN
             </p>
-            <p className="text-center font-light my-1">
+            <p className="text-center font-light text-xs">
               There are 8 parking spaces available in the car park,
               alternatively there is plenty of space to park on the road.
             </p>
