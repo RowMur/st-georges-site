@@ -1,113 +1,182 @@
-import Image from 'next/image'
+import React from "react";
+import stGeorgesLogo from "../../public/St Georges Logo.jpg";
+import practiceImage from "../../public/Practice Time_003.jpg";
+import Image from "next/image";
+import { FaTableTennis, FaMedal, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
-export default function Home() {
+const callsToAction = [
+  {
+    name: "Come and Practice",
+    shortName: "Play",
+    href: "#practice",
+    icon: FaTableTennis,
+  },
+  {
+    name: "Competitive Play",
+    shortName: "Compete",
+    href: "#compete",
+    icon: FaMedal,
+  },
+  {
+    name: "Where to Find Us",
+    shortName: "Find Us",
+    href: "#find",
+    icon: FaMapMarkerAlt,
+  },
+  {
+    name: "Contact the Club",
+    shortName: "Contact",
+    href: "#contact",
+    icon: FaUser,
+  },
+];
+
+const sessions = [
+  { day: "Fridays", time: "8-10pm", note: "£5 per evening, all are welcome." },
+  {
+    day: "Wednesdays",
+    time: "7:30-9:30pm",
+    note: "Out of season (summer), members only.",
+  },
+];
+
+const emails = ["stgeorgesttclub@gmail.com", "info@stgeorgesclub.org.uk"];
+
+const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <>
+      <header className="bg-white">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+          <div className="flex lg:flex-1">
+            {/* <img src={stGeorgesLogo} /> */}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={stGeorgesLogo}
+              alt="St Georges Logo"
+              className="h-12 w-auto"
             />
-          </a>
+          </div>
+          <div
+            className="grid grid-cols-4 lg:flex divide-x lg:divide-gray-900/5"
+            id="navbar-default"
+          >
+            {callsToAction.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+              >
+                <item.icon
+                  className="h-5 w-5 flex-none text-gray-400"
+                  aria-hidden="true"
+                />
+                <p className="hidden lg:block">{item.name}</p>
+                <p className="hidden sm:block lg:hidden">{item.shortName}</p>
+              </a>
+            ))}
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div
+          className="container mx-auto my-2 p-10 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center"
+          id="practice"
+        >
+          <div className="w-4/5 md:w-2/4 px-2 my-2">
+            <h1 className="text-center font-bold text-lg">
+              Club Practice Nights
+            </h1>
+            <p className="text-center font-light text-sm">
+              We have four high quality tables available for practice. We have a
+              range of abilities from beginner up to national league.
+            </p>
+            <div className="my-3">
+              {sessions.map((session) => (
+                <div className="container my-2" key={session.day}>
+                  <p>
+                    {session.day} {session.time}
+                  </p>
+                  <p className="font-light text-sm">{session.note}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center font-light text-xs">
+              You are encouraged to email{" "}
+              <a
+                href="mailto: stgeorgesttclub@gmail.com"
+                className="text-blue-400"
+              >
+                stgeorgesttclub@gmail.com
+              </a>{" "}
+              if planning to come along, so that we have a rough idea of how
+              many people to expect on an evening.
+            </p>
+          </div>
+          <Image
+            src={practiceImage}
+            alt="Practice Session"
+            className="h-auto w-4/5 md:w-2/4"
+          />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        <div className="container mx-auto my-2 p-10 rounded-3xl" id="compete">
+          <h1 className="text-center font-bold text-lg">Local Leagues</h1>
+          <p className="text-center font-light my-2">
+            For the 2022-23 season, we have 5 teams playing in the{" "}
+            <a
+              href="https://cambridge.ttleagues.com/"
+              className="text-blue-400"
+            >
+              Cambridge & District Table Tennis League
+            </a>{" "}
+            and 2 teams in the{" "}
+            <a
+              href="https://elydistrict.ttleagues.com/"
+              className="text-blue-400"
+            >
+              Ely and District Table Tennis League
+            </a>
+            . League matches start in October, and home nights are Mondays and
+            Wednesdays.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
+        </div>
+        <div
+          className="container mx-auto my-2 p-10 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center"
+          id="find"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="w-4/5 md:w-2/4 px-2 my-2">
+            <h1 className="text-center font-bold text-lg">Where to Find Us</h1>
+            <p className="text-center font-light text-xs">
+              St George&apos;s Church Hall Chesterfield Road Cambridge CB4 1LN
+            </p>
+            <p className="text-center font-light my-1">
+              There are 8 parking spaces available in the car park,
+              alternatively there is plenty of space to park on the road.
+            </p>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.061692689269!2d0.13987197758941497!3d52.22409695809388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d870f83a147275%3A0xd83b666dae161c6f!2sSt%20Georges%20Table%20tennis%20club!5e0!3m2!1sen!2suk!4v1687599768637!5m2!1sen!2suk"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div className="container mx-auto my-2 p-10 rounded-3xl" id="contact">
+          <h1 className="text-center font-bold text-lg">Contact the Club</h1>
+          {emails.map((email) => (
+            <div
+              key={email}
+              className="container flex justify-center items-center"
+            >
+              <MdOutlineEmail />
+              <p>{email}</p>
+            </div>
+          ))}
+        </div>
+      </main>
+    </>
+  );
+};
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;
