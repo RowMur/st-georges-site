@@ -49,7 +49,6 @@ const Home = () => {
       <header className="bg-white">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            {/* <img src={stGeorgesLogo} /> */}
             <Image
               src={stGeorgesLogo}
               alt="St Georges Logo"
@@ -170,8 +169,13 @@ const Home = () => {
               key={email}
               className="container flex justify-center items-center"
             >
-              <MdOutlineEmail />
-              <p>{email}</p>
+              <a
+                href={`mailto: ${email}`}
+                className="text-blue-400 flex items-center"
+              >
+                <MdOutlineEmail />
+                {email}
+              </a>
             </div>
           ))}
         </div>
