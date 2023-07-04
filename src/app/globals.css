@@ -5,3 +5,33 @@
 html {
   scroll-behavior: smooth;
 }
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  --borderRadius: 20px;
+}
+
+th {
+  background-color: #e65c4f;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+td {
+  text-align: center;
+  padding: 1rem;
+  background-color: #e9eef2;
+  color: #78a6c8;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: var(--borderRadius);
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: var(--borderRadius);
+}
