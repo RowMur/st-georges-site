@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import practiceImage from "../../public/practiceImage.png";
+import Wave from "./Wave";
 
 const Hero = () => {
   return (
@@ -30,6 +31,7 @@ const Hero = () => {
           />
         </div>
       </div>
+      <Wave color="#E9EEF2" />
     </>
   );
 };

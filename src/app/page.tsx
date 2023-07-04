@@ -1,7 +1,10 @@
 import React from "react";
 import NavBar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Wave from "@/components/Wave";
+import Practices from "@/components/Practices";
+import LocalLeagues from "@/components/LocalLeagues";
+import Where from "@/components/Where";
+import Contact from "@/components/Contact";
 
 // const callsToAction = [
 //   {
@@ -41,21 +44,15 @@ import Wave from "@/components/Wave";
 
 // const emails = ["stgeorgesttclub@gmail.com", "info@stgeorgesclub.org.uk"];
 
-const UpsideDownWave = () => {
-  return (
-    <div className="rotate-180">
-      <Wave />
-    </div>
-  );
-};
-
 const Home = () => {
   return (
     <div className="bg-grey">
       <NavBar />
-      <Wave />
       <Hero />
-      <UpsideDownWave />
+      <Practices />
+      <LocalLeagues />
+      <Where />
+      <Contact />
     </div>
   );
 };
