@@ -4,7 +4,7 @@ import Wave from "./Wave";
 const Where = () => {
   return (
     <>
-      <div className="bg-white">
+      <div id="whereSection" className="bg-white">
         <div className="max-w-7xl mx-auto grid place-items-center px-4 py-12 lg:py-36 xl:py-48">
           <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter">
             Where to find us

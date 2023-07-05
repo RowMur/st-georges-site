@@ -1,9 +1,19 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import practiceImage from "../../public/practiceImage.png";
 import Wave from "./Wave";
 
 const Hero = () => {
+  const WhereSectionScroll = () => {
+    document.getElementById("whereSection")?.scrollIntoView(true);
+  };
+
+  const ContactSectionScroll = () => {
+    document.getElementById("contactSection")?.scrollIntoView(true);
+  };
+
   return (
     <>
       <div className="max-w-7xl mx-auto grid place-items-center py-12 lg:py-36 xl:py-48">
@@ -16,12 +26,18 @@ const Hero = () => {
               Friday nights 8-10pm
             </p>
             <div className="mx-auto lg:mx-0 mt-4 lg:mt-8 flex justify-center lg:justify-start flex-row gap-2">
-              <a className="sm:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer text-red lg:text-lg font-bold px-8 py-2 hover:bg-red hover:text-grey duration-300">
-                Where
-              </a>
-              <a className="sm:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer hover:text-red lg:text-lg font-bold px-8 py-2 bg-red hover:bg-opacity-0 text-grey duration-300">
+              <button
+                onClick={ContactSectionScroll}
+                className="sm:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer text-red lg:text-lg font-bold px-8 py-2 hover:bg-red hover:text-grey duration-300"
+              >
                 Contact
-              </a>
+              </button>
+              <button
+                onClick={WhereSectionScroll}
+                className="sm:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer hover:text-red lg:text-lg font-bold px-8 py-2 bg-red hover:bg-opacity-0 text-grey duration-300"
+              >
+                Where
+              </button>
             </div>
           </div>
           <Image
