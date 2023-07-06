@@ -1,5 +1,6 @@
 import React from "react";
-import Wave from "./Wave";
+import Wave from "../svgs/Wave";
+import ExternalLink from "../ExternalLink";
 
 const LocalLeagues = () => {
   return (
@@ -16,20 +17,16 @@ const LocalLeagues = () => {
             nights are Mondays and Wednesdays.
           </p>
           <div className="mx-auto md:mx-0 mt-2 lg:mt-4 flex justify-center md:justify-start flex-col md:flex-row gap-2">
-            <a
+            <ExternalLink
+              hierachy="secondary"
               href="https://cambridge.ttleagues.com/"
-              target="_blank"
-              className="mx-auto md:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer text-red lg:text-lg font-bold px-8 py-2 hover:bg-red hover:text-grey duration-300"
-            >
-              Cambridge League
-            </a>
-            <a
+              text="Cambridge League"
+            />
+            <ExternalLink
+              hierachy="secondary"
               href="https://elydistrict.ttleagues.com/"
-              target="_blank"
-              className="mx-auto md:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer text-red lg:text-lg font-bold px-8 py-2 hover:bg-red hover:text-grey duration-300"
-            >
-              Ely League
-            </a>
+              text="Ely League"
+            />
           </div>
         </div>
       </div>

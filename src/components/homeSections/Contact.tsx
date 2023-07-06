@@ -2,6 +2,7 @@
 
 import React, { FormEvent } from "react";
 import { useState } from "react";
+import Button from "../Button";
 
 interface errorsType {
   email: boolean;
@@ -146,9 +147,10 @@ const Contact = () => {
               </p>
             )}
 
-            <button className="sm:mx-0 border-solid border-red border-2 rounded-2xl hover:cursor-pointer hover:text-red focus:text-red lg:text-lg font-bold px-8 py-1 mt-4 bg-red hover:bg-opacity-0 focus:bg-opacity-0 outline-none text-grey duration-300">
+            {/* <button className="sm:mx-0 border-solid border-red border-2 rounded-2xl hover:cursor-pointer hover:text-red focus:text-red lg:text-lg font-bold px-8 py-1 mt-4 bg-red hover:bg-opacity-0 focus:bg-opacity-0 outline-none text-grey duration-300">
               {buttonText}
-            </button>
+            </button> */}
+            <Button text={buttonText} hierachy="primary" fit={false} />
           </form>
           <div>
             {showSuccessMessage && (

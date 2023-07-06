@@ -1,5 +1,5 @@
 import React from "react";
-import Wave from "./Wave";
+import Wave from "../svgs/Wave";
 
 const Practices = () => {
   return (

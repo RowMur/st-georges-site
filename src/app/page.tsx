@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Practices from "@/components/Practices";
-import LocalLeagues from "@/components/LocalLeagues";
-import Where from "@/components/Where";
-import Contact from "@/components/Contact";
+import Hero from "@/components/homeSections/Hero";
+import Practices from "@/components/homeSections/Practices";
+import LocalLeagues from "@/components/homeSections/LocalLeagues";
+import Where from "@/components/homeSections/Where";
+import Contact from "@/components/homeSections/Contact";
 
 const Home = () => {
   return (

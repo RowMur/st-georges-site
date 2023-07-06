@@ -1,5 +1,5 @@
 import React from "react";
-import Wave from "./Wave";
+import Wave from "../svgs/Wave";
 
 const Where = () => {
   return (
@@ -16,8 +16,6 @@ const Where = () => {
           ></iframe>
         </div>
       </div>
-      {/* <div className="grid place-items-center bg-white p-8"> */}
-
       <Wave color="white" />
     </>
   );

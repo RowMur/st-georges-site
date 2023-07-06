@@ -1,7 +1,7 @@
 import React from "react";
 import sgLogo from "../../public/stGeorgesLogo.png";
 import Image from "next/image";
-import Wave from "./Wave";
+import Wave from "./svgs/Wave";
 
 const NavBar = () => {
   return (

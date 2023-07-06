@@ -2,8 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import practiceImage from "../../public/practiceImage.png";
-import Wave from "./Wave";
+import practiceImage from "../../../public/practiceImage.png";
+import Wave from "../svgs/Wave";
+import Button from "../Button";
 
 const Hero = () => {
   const WhereSectionScroll = () => {
@@ -25,19 +26,19 @@ const Hero = () => {
             <p className="text-center lg:text-left font-bold text-2xl lg:text-3xl text-blue leading-normal lg:py-4">
               Friday nights 8-10pm
             </p>
-            <div className="mx-auto lg:mx-0 mt-4 lg:mt-8 flex justify-center lg:justify-start flex-row gap-2">
-              <button
+            <div className="mx-auto lg:mx-0 lg:mt-8 flex justify-center lg:justify-start flex-row gap-2">
+              <Button
                 onClick={ContactSectionScroll}
-                className="sm:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer text-red lg:text-lg font-bold px-8 py-2 hover:bg-red hover:text-grey duration-300"
-              >
-                Contact
-              </button>
-              <button
+                text="Contact"
+                hierachy="secondary"
+                fit={true}
+              />
+              <Button
                 onClick={WhereSectionScroll}
-                className="sm:mx-0 w-fit border-solid border-red border-2 rounded-2xl hover:cursor-pointer hover:text-red lg:text-lg font-bold px-8 py-2 bg-red hover:bg-opacity-0 text-grey duration-300"
-              >
-                Where
-              </button>
+                text="Where"
+                hierachy="primary"
+                fit={true}
+              />
             </div>
           </div>
           <Image
