@@ -11,6 +11,8 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-dark-to-light-blue":
+          "linear-gradient(to bottom right, #326789, #78A6C8);",
       },
     },
     colors: {
@@ -32,9 +34,24 @@ module.exports = {
         "60%": { transform: "rotate(0.0deg)" },
         "100%": { transform: "rotate(0.0deg)" },
       },
+      float: {
+        "0%": {
+          boxshadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+          transform: "translatey(0px)",
+        },
+        "50%": {
+          boxshadow: "0 25px 15px 0px rgba(0,0,0,0.2)",
+          transform: "translatey(-10px)",
+        },
+        "100%": {
+          boxshadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+          transform: "translatey(0px)",
+        },
+      },
     },
     animation: {
       wave: "wave 2s linear infinite",
+      float: "float 3s ease-in-out  infinite",
     },
   },
   plugins: [],

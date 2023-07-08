@@ -84,14 +84,14 @@ const Contact = () => {
 
   return (
     <>
-      <div id="contactSection" className="bg-grey px-2">
+      <div id="contactSection" className="bg-grey">
         <div className="max-w-7xl mx-auto grid place-items-center py-12 lg:py-36 xl:py-48">
           <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter">
             Contact the Club
           </p>
           <form
             onSubmit={handleSubmit}
-            className="rounded-lg flex flex-col px-8 py-8 dark:bg-blue-500 w-96"
+            className="rounded-lg flex flex-col px-2 w-10/12 lg:px-8 py-8 dark:bg-blue-500 max-w-2xl"
           >
             <label className="text-left font-medium text-base sm:text-lg lg:text-xl text-blue leading-normal py-1 max-w-lg">
               Email
