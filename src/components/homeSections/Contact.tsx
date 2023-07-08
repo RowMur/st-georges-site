@@ -3,6 +3,7 @@
 import React, { FormEvent } from "react";
 import { useState } from "react";
 import Button from "../Button";
+import { MdEmail } from "react-icons/md";
 
 interface errorsType {
   email: boolean;
@@ -146,21 +147,27 @@ const Contact = () => {
                 Message cannot be empty.
               </p>
             )}
-
-            {/* <button className="sm:mx-0 border-solid border-red border-2 rounded-2xl hover:cursor-pointer hover:text-red focus:text-red lg:text-lg font-bold px-8 py-1 mt-4 bg-red hover:bg-opacity-0 focus:bg-opacity-0 outline-none text-grey duration-300">
-              {buttonText}
-            </button> */}
             <Button text={buttonText} hierachy="primary" fit={false} />
           </form>
-          <div>
+          <div className="items-center">
             {showSuccessMessage && (
-              <p className="text-green-500 font-semibold text-sm my-2">
-                Thank you! Your Message has been delivered.
-              </p>
+              <p>Thank you! Your Message has been delivered.</p>
             )}
             {showFailureMessage && (
-              <p className="text-red-500">
+              <p className="text-center">
                 Oops! Something went wrong, please try again.
+                <br />
+                <br />
+                Alternatively, contact directly:
+                <br />
+                <a
+                  target="_blank"
+                  href="mailto: stgeorgesttclub@gmail.com"
+                  className="inline text-blue"
+                >
+                  <MdEmail className="h-4 w-fit aspect-square inline mr-1" />
+                  stgeorgesttclub@gmail.com
+                </a>
               </p>
             )}
           </div>
