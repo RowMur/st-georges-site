@@ -5,6 +5,7 @@ import Practices from "@/components/homeSections/Practices";
 import LocalLeagues from "@/components/homeSections/LocalLeagues";
 import Where from "@/components/homeSections/Where";
 import Contact from "@/components/homeSections/Contact";
+import Popup from "@/components/Popup";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <LocalLeagues />
       <Where />
       <Contact />
+      <Popup />
     </div>
   );
 };
