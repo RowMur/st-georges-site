@@ -1,17 +1,17 @@
 import sendgrid from "@sendgrid/mail";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 if (process.env.SENDGRID_API_KEY) {
   sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 }
 
-async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
+export const POST = async (request: Request) => {
   if (!process.env.EMAIL) {
     return;
   }
 
   try {
-    const { email, message, subject } = req.body;
+    const { email, message, subject } = await request.json();
 
     await sendgrid.send({
       from: process.env.EMAIL,
@@ -20,11 +20,15 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
       subject: subject,
       replyTo: email,
     });
+
+    return NextResponse.json({
+      stats: 200,
+      error: "",
+    });
   } catch (error) {
-    return res.status(500).json({ error: "Something went wrong!" });
+    return NextResponse.json({
+      status: 500,
+      error: "Something went wrong!",
+    });
   }
-
-  return res.status(200).json({ error: "" });
-}
-
-export default sendEmail;
+};
