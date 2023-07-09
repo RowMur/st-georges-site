@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# St Georges TTC Website
 
-## Getting Started
+### Project Description
 
-First, run the development server:
+Having not been touched in years, my local table tennis club's website has been in need of a spruce up. This work aims to encourage new people to come along to the club, and hopefully to take up the sport as a hobby longer term. To achieve this I have:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Answered major questions as quickly as possible when a visitor comes onto the site as concisely as possible. Who, what, when, where...
+- Used a modern design to bring some life to the site and hence the club.
+- Implemented a contact form into the site to reduce the friction of reaching out to the club.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a href="https://st-georges-site.vercel.app/" target="_blank">Live Demo</a>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Technology Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- NextJS
+- React
+- Typescript
+- TailwindCSS
+- Twilio/SendGrid - for sending emails
+- Vercel - for hosting 
 
-## Learn More
+[![Technology Used](https://skills.thijs.gg/icons?i=nextjs,react,ts,tailwind)](https://skills.thijs.gg)
 
-To learn more about Next.js, take a look at the following resources:
+### Learnings from this Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- How to structure a NextJS project
+- Sending emails programmatically via the SendGrid API
+- Styling using TailwindCSS
+- Hosting with Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Features to Add
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Pages for results/league tables in the local leagues
+- Photo/video album
+- Integrating the site with a CMS
