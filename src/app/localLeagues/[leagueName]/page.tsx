@@ -1,13 +1,12 @@
 "use client";
 
-import "../../../app/globals.css";
 import React, { useState, useEffect } from "react";
 import fetchDivisions from "@/modules/fetchDivisions";
 import { division } from "@/types/division";
-import NavBar from "@/components/Navbar";
+import Header from "@/components/Header";
 import { useParams } from "next/navigation";
 
-const CambridgeLeague = () => {
+const LeaguePage = () => {
   const [divisions, setDivisions] = useState<division[]>();
 
   const { leagueName } = useParams();
@@ -27,7 +26,7 @@ const CambridgeLeague = () => {
   return (
     <div className="bg-grey">
       <div>
-        <NavBar />
+        <Header />
         {divisions?.map((e) => {
           return (
             <div key={e.divisionId}>
@@ -42,4 +41,4 @@ const CambridgeLeague = () => {
   );
 };
 
-export default CambridgeLeague;
+export default LeaguePage;

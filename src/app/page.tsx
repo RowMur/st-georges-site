@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "@/components/Navbar";
+import Header from "@/components/Header";
 import Hero from "@/components/homeSections/Hero";
 import Practices from "@/components/homeSections/Practices";
 import LocalLeagues from "@/components/homeSections/LocalLeagues";
@@ -10,7 +10,7 @@ import Popup from "@/components/Popup";
 const Home = () => {
   return (
     <div className="bg-grey">
-      <NavBar />
+      <Header />
       <Hero />
       <Practices />
       <LocalLeagues />
