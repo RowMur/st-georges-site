@@ -25,7 +25,7 @@ const Hero = () => {
             </p>
             <div className="py-2">
               {[
-                "St George's Chruch Hall, Cambridge",
+                "St George's Church Hall, Cambridge",
                 "Friday nights 8-10pm",
               ].map((e) => {
                 return (
