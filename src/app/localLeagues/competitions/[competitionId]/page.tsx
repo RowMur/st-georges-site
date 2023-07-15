@@ -38,14 +38,14 @@ const CompetitionPage = () => {
   return (
     <div className="bg-grey min-h-screen">
       <Header />
-      <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter mt-4 text-center">
+      <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter mt-8 md:mt-12 lg:mt-24 text-center">
         {competition?.name}
       </p>
       {competitionDivisions?.map((e) => {
         return (
           <div
             key={e.id}
-            className="max-w-7xl mx-auto grid place-items-center md:p-12 lg:py-24"
+            className="max-w-7xl mx-auto grid place-items-center md:p-12"
           >
             <p className="font-bold text-2xl lg:text-3xl text-blue leading-tight mt-8 mb-4">
               {e.name} Division
