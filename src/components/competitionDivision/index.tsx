@@ -1,5 +1,8 @@
 import React from "react";
 import DivisionStandings from "./divisionStandings";
+import DivisionAverages from "./divisionAverages";
+import DivisionDoublesAverages from "./divisionDoublesAverages";
+import DivisionPotms from "./divisionPotms";
 
 interface CompetitionDivisionProps {
   id: number;
@@ -7,9 +10,18 @@ interface CompetitionDivisionProps {
 
 const CompetitionDivision = ({ id }: CompetitionDivisionProps) => {
   return (
-    <div className="grid grid-cols-3 w-full">
-      <div className="col-span-3">
+    <div className="flex flex-col w-full md:grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4">
+      <div className="col-span-2 max-h-[30rem] overflow-y-scroll">
         <DivisionStandings id={id} />
+      </div>
+      <div className="col-span-1 max-h-[30rem] overflow-y-scroll">
+        <DivisionPotms id={id} />
+      </div>
+      <div className="col-span-1 max-h-[30rem] overflow-y-scroll">
+        <DivisionDoublesAverages id={id} />
+      </div>
+      <div className="col-span-2 max-h-[30rem] overflow-y-scroll">
+        <DivisionAverages id={id} />
       </div>
     </div>
   );

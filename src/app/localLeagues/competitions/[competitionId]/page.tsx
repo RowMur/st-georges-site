@@ -45,7 +45,7 @@ const CompetitionPage = () => {
         return (
           <div
             key={e.id}
-            className="max-w-7xl mx-auto grid place-items-center md:p-12"
+            className="max-w-7xl w-5/6 mx-auto grid place-items-center md:p-12"
           >
             <p className="font-bold text-2xl lg:text-3xl text-blue leading-tight mt-8 mb-4">
               {e.name} Division

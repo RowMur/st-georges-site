@@ -20,6 +20,59 @@ export interface divisionStandingType {
   competitionId: number;
 }
 
+export interface divisionAverageType {
+  competitionId: number;
+  divisionId: number;
+  userId: string;
+  competition: string;
+  division: string;
+  name: string;
+  teamFullName: string;
+  team: string;
+  teamId: number;
+  club: string;
+  clubId: number;
+  played: number;
+  won: number;
+  loss: number;
+  percentage: number;
+  updated: string;
+  reserve: boolean;
+}
+
+export interface divisionDoublesAverageType {
+  competitionId: number;
+  divisionId: number;
+  userOneId: string;
+  userTwoId: string;
+  competition: string;
+  division: string;
+  nameOne: string;
+  nameTwo: string;
+  teamFullName: string;
+  team: string;
+  teamId: number;
+  club: string;
+  clubId: number;
+  played: number;
+  won: number;
+  loss: number;
+  percentage: number;
+  updated: string;
+  reserveOne: boolean;
+  reserveTwo: boolean;
+}
+
+export interface divisionPotmType {
+  userId: string;
+  name: string;
+  teamId: number;
+  team: string;
+  clubId: number;
+  club: string;
+  played: number;
+}
+
 export interface divisionType {
   divisionId: number;
   competitionId: number;

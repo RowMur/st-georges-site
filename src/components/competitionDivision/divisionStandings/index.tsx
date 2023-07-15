@@ -21,9 +21,9 @@ const DivisionStandings = ({ id }: DivisionStandingsProps) => {
   }, [id]);
 
   return (
-    <div className="min-h-min">
+    <div className="h-full">
       {standings && (
-        <table className="text-xs md:text-base mx-auto w-11/12">
+        <table className="text-xs md:text-base w-full h-full bg-white">
           <thead>
             <tr>
               <th>Position</th>

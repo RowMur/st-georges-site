@@ -13,6 +13,8 @@ svg {
 
 table {
   --borderRadius: 20px;
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
 }
 
 th {
@@ -29,12 +31,4 @@ tr {
 td {
   text-align: center;
   padding: 1rem 0.5rem;
-}
-
-table tr:last-child td:first-child {
-  border-bottom-left-radius: var(--borderRadius);
-}
-
-table tr:last-child td:last-child {
-  border-bottom-right-radius: var(--borderRadius);
 }
