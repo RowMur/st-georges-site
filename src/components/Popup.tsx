@@ -13,7 +13,7 @@ const Popup = () => {
   return (
     <>
       {!hidden && (
-        <div className="fixed bottom-8 right-8 lg:bottom-16 lg:right-16 w-24 sm:w-36 lg:w-48 aspect-square rounded-full bg-gradient-dark-to-light-blue  grid place-items-center animate-float">
+        <div className="fixed bottom-8 right-8 lg:bottom-16 lg:right-16 w-24 sm:w-36 aspect-square rounded-full bg-gradient-dark-to-light-blue grid place-items-center animate-float">
           <button onClick={hidePopup} className="absolute top-0 right-0">
             <RxCross2 />
           </button>
@@ -22,7 +22,7 @@ const Popup = () => {
               return (
                 <p
                   key={e}
-                  className="text-center lg:text-left font-bold text-xs sm:text-sm lg:text-lg max-w-lg mx-auto lg:mx-0 text-white my-0"
+                  className="text-center lg:text-left font-bold text-xs sm:text-sm max-w-lg mx-auto lg:mx-0 text-white my-0"
                 >
                   {e}
                 </p>

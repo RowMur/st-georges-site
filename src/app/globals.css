@@ -21,11 +21,14 @@ th {
   padding: 0.5rem;
 }
 
-td {
-  text-align: center;
-  padding: 1rem;
+tr {
   background-color: #e9eef2;
   color: #78a6c8;
+}
+
+td {
+  text-align: center;
+  padding: 1rem 0.5rem;
 }
 
 table tr:last-child td:first-child {
