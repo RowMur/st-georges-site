@@ -1,8 +1,4 @@
-"use client";
-
 import * as React from "react";
-import fetchCompetitions from "../../modules/fetchCompetitions";
-
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -12,39 +8,48 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./navigationMenu";
-import { competition } from "@/types/competition";
+import { competitionType } from "@/types/competition";
+import { Dispatch, SetStateAction } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const { useState, useEffect } = React;
+interface NavbarProps {
+  setSideNavOpen: Dispatch<SetStateAction<boolean>>;
+  cambridgeCompetitions: competitionType[] | undefined;
+  elyCompetitions: competitionType[] | undefined;
+}
 
-const Navbar = () => {
-  const [cambridgeCompetitions, setCambridgeCompetitions] =
-    useState<competition[]>();
-  const [elyCompetitions, setElyCompetitions] = useState<competition[]>();
-
-  useEffect(() => {
-    const getCompetitions = async () => {
-      const cambridgeResponse = await fetchCompetitions("cambridge");
-      const elyResponse = await fetchCompetitions("elydistrict");
-
-      setCambridgeCompetitions(cambridgeResponse);
-      setElyCompetitions(elyResponse);
-    };
-
-    getCompetitions();
-  }, []);
-
+const Navbar = ({
+  setSideNavOpen,
+  cambridgeCompetitions,
+  elyCompetitions,
+}: NavbarProps) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="flex flex-col justify-center">
+          <button
+            className="sm:hidden w-6 text-darkBlue"
+            onClick={() => {
+              setSideNavOpen(true);
+            }}
+          >
+            <GiHamburgerMenu />
+          </button>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="hidden sm:inline-block">
           <NavigationMenuTrigger>Local Leagues</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className={"row-span-" + cambridgeCompetitions?.length}>
+            <ul className="flex p-6 sm:w-[500px]">
+              <li className="max-w-[40%]">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    className="flex h-full w-full select-none flex-col justify-start rounded-md bg-gradient-to-b from-muted/50 to-muted p-3 pr-6 no-underline outline-none focus:shadow-md"
+                    href={
+                      cambridgeCompetitions
+                        ? "/localLeagues/competitions/" +
+                          cambridgeCompetitions[0].id
+                        : ""
+                    }
                   >
                     <div className="mb-2 mt-4 text-lg font-bold text-darkBlue">
                       Cambridge
@@ -56,32 +61,48 @@ const Navbar = () => {
                   </a>
                 </NavigationMenuLink>
               </li>
-              {cambridgeCompetitions &&
-                cambridgeCompetitions.map((e) => (
-                  <ListItem key={e.id} title={e.name} />
-                ))}
+              <div>
+                {cambridgeCompetitions &&
+                  cambridgeCompetitions.map((e) => (
+                    <ListItem
+                      key={e.id}
+                      href={"/localLeagues/competitions/" + e.id}
+                      title={e.name}
+                    />
+                  ))}
+              </div>
             </ul>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className={"row-span-" + elyCompetitions?.length}>
+            <ul className="flex p-6 sm:w-[500px]">
+              <li className="max-w-[40%]">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    className="flex h-full w-full select-none flex-col justify-start rounded-md bg-gradient-to-b from-muted/50 to-muted p-3 pr-6 no-underline outline-none focus:shadow-md"
+                    href={
+                      elyCompetitions
+                        ? "/localLeagues/competitions/" + elyCompetitions[0].id
+                        : ""
+                    }
                   >
                     <div className="mb-2 mt-4 text-lg font-bold text-darkBlue">
                       Ely
                     </div>
                     <p className="text-sm leading-tight text-blue">
                       For the 22/23 season we have 2 teams playing in the Ely
-                      leagues.
+                      League.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              {elyCompetitions &&
-                elyCompetitions.map((e) => (
-                  <ListItem key={e.id} title={e.name} />
-                ))}
+              <div>
+                {elyCompetitions &&
+                  elyCompetitions.map((e) => (
+                    <ListItem
+                      key={e.id}
+                      href={"/localLeagues/competitions/" + e.id}
+                      title={e.name}
+                    />
+                  ))}
+              </div>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

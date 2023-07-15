@@ -1,8 +1,8 @@
-import { competition } from "@/types/competition";
+import { competitionType } from "@/types/competition";
 
 const fetchCompetitions = async (
   leagueName: string
-): Promise<competition[]> => {
+): Promise<competitionType[]> => {
   try {
     const activeCompetitionResponse = await fetch(
       "https://ttleagues-api.azurewebsites.net/api/competitions/all",

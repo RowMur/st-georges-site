@@ -40,10 +40,25 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        float: {
+          "0%": {
+            boxshadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+            transform: "translatey(0px)",
+          },
+          "50%": {
+            boxshadow: "0 25px 15px 0px rgba(0,0,0,0.2)",
+            transform: "translatey(-10px)",
+          },
+          "100%": {
+            boxshadow: "0 5px 15px 0px rgba(0,0,0,0.6)",
+            transform: "translatey(0px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 3s ease-in-out  infinite",
       },
     },
   },

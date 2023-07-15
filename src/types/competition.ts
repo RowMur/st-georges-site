@@ -1,4 +1,4 @@
-export interface competition {
+export interface competitionType {
   id: number;
   leagueId: number;
   name: string;

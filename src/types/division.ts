@@ -1,4 +1,4 @@
-export interface divisionStanding {
+export interface divisionStandingType {
   entrantId: number;
   teamId: number;
   fullName: string;
@@ -20,10 +20,10 @@ export interface divisionStanding {
   competitionId: number;
 }
 
-export interface division {
+export interface divisionType {
   divisionId: number;
   competitionId: number;
   name: string;
   competition: string;
-  standings: divisionStanding[];
+  standings: divisionStandingType[];
 }
