@@ -3,16 +3,36 @@ import { competition } from "@/types/competition";
 const fetchCompetitions = async (
   leagueName: string
 ): Promise<competition[]> => {
-  const response = await fetch("/api/competitions", {
-    body: JSON.stringify({
-      league: leagueName,
-    }),
-    method: "POST",
-  });
+  try {
+    const activeCompetitionResponse = await fetch(
+      "https://ttleagues-api.azurewebsites.net/api/competitions/all",
+      {
+        headers: {
+          Tenant: leagueName + ".ttleagues.com",
+        },
+      }
+    );
+    const activeCompetition = await activeCompetitionResponse.json();
 
-  const competitions = response.json();
+    const archiveCompetitionsResponse = await fetch(
+      "https://ttleagues-api.azurewebsites.net/api/competitions/archives",
+      {
+        headers: {
+          Tenant: leagueName + ".ttleagues.com",
+        },
+      }
+    );
+    const archiveCompetitions = await archiveCompetitionsResponse.json();
 
-  return competitions;
+    const allCompetitions = archiveCompetitions
+      .concat(activeCompetition)
+      .reverse();
+
+    return allCompetitions;
+  } catch (error) {
+    console.log(error);
+    throw Error(String(error));
+  }
 };
 
 export default fetchCompetitions;
