@@ -35,14 +35,7 @@ const DivisionDoublesAverages = ({ id }: DivisionDoublesAveragesProps) => {
             {averages.map((e) => (
               <>
                 {e.club.includes("St George") && (
-                  <tr
-                    key={e.userOneId + e.userTwoId}
-                    className={
-                      e.club.includes("St Georges")
-                        ? " bg-blue text-white"
-                        : " bg-white"
-                    }
-                  >
+                  <tr key={e.userOneId + e.userTwoId} className="bg-white">
                     <td>
                       {e.nameOne} + {e.nameTwo}
                     </td>

@@ -36,14 +36,7 @@ const DivisionAverages = ({ id }: DivisionAveragesProps) => {
             {averages.map((e) => (
               <>
                 {e.club.includes("St George") && (
-                  <tr
-                    key={e.userId}
-                    className={
-                      e.club.includes("St Georges")
-                        ? " bg-blue text-white"
-                        : " bg-white"
-                    }
-                  >
+                  <tr key={e.userId} className="bg-white">
                     <td>{e.name}</td>
                     <td>{e.team}</td>
                     <td>{e.percentage}%</td>

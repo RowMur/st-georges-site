@@ -42,9 +42,9 @@ const DivisionStandings = ({ id }: DivisionStandingsProps) => {
               <tr
                 key={e.entrantId}
                 className={
-                  e.fullName.includes("St Georges")
+                  e.fullName.includes("St George")
                     ? " bg-blue text-white"
-                    : " bg-white"
+                    : "bg-white"
                 }
               >
                 <td>{e.position}</td>
