@@ -10,7 +10,7 @@ const LocalLeagues = () => {
           <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter">
             Local Leagues
           </p>
-          <p className="text-left font-medium text-base sm:text-lg lg:text-xl text-blue leading-normal py-2 lg:py-4 max-w-lg px-4">
+          <p className="text-center md:text-left font-medium text-base sm:text-lg lg:text-xl text-blue leading-normal py-2 lg:py-4 max-w-lg px-4">
             For the 2022-23 season, we have 5 teams playing in the Cambridge &
             District Table Tennis League and 2 teams in the Ely and District
             Table Tennis League. League matches start in October, and home
