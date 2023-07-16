@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { divisionStandingType } from "@/types/division";
 import fetchDivisionStandings from "@/modules/fetchDivisionStandings";
+import PlaceholderTable from "../placeholderTable";
 
 interface DivisionStandingsProps {
   id: number;
@@ -22,6 +23,7 @@ const DivisionStandings = ({ id }: DivisionStandingsProps) => {
 
   return (
     <div className="h-full">
+      {!standings && <PlaceholderTable />}
       {standings && (
         <table className="text-xs md:text-base w-full h-full bg-white">
           <thead>

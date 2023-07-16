@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { divisionPotmType } from "@/types/division";
 import fetchDivisionPotms from "@/modules/fetchDivisionPotms";
+import PlaceholderTable from "../placeholderTable";
 
 interface DivisionPotmsProps {
   id: number;
@@ -20,7 +21,7 @@ const DivisionPotms = ({ id }: DivisionPotmsProps) => {
 
   return (
     <div className="h-full">
-      {potms && (
+      {potms ? (
         <table className="text-xs md:text-base w-full h-full bg-white">
           <thead>
             <tr>
@@ -50,6 +51,8 @@ const DivisionPotms = ({ id }: DivisionPotmsProps) => {
             ))}
           </tbody>
         </table>
+      ) : (
+        <PlaceholderTable />
       )}
     </div>
   );

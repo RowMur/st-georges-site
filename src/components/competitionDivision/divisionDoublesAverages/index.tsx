@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { divisionDoublesAverageType } from "@/types/division";
 import fetchDivisionDoublesAverages from "@/modules/fetchDivisionDoublesAverages";
+import PlaceholderTable from "../placeholderTable";
 
 interface DivisionDoublesAveragesProps {
   id: number;
@@ -20,7 +21,7 @@ const DivisionDoublesAverages = ({ id }: DivisionDoublesAveragesProps) => {
 
   return (
     <div className="h-full">
-      {averages && (
+      {averages ? (
         <table className="text-xs md:text-base w-full bg-white h-full">
           <thead>
             <tr>
@@ -54,6 +55,8 @@ const DivisionDoublesAverages = ({ id }: DivisionDoublesAveragesProps) => {
             ))}
           </tbody>
         </table>
+      ) : (
+        <PlaceholderTable />
       )}
     </div>
   );
