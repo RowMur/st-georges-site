@@ -54,11 +54,59 @@ module.exports = {
             transform: "translatey(0px)",
           },
         },
+        frontBat: {
+          "25%": {
+            transform: "translatex(-140%) rotate(-75deg)",
+          },
+          "50%": {
+            transform: "translatex(-140%) rotate(-75deg)",
+          },
+          "75%": {
+            transform: "translatex(0) rotate(0)",
+          },
+        },
+        backBat: {
+          "25%": {
+            transform: "translatex(0) rotate(0)",
+          },
+          "50%": {
+            transform: "translatex(-140%) rotate(-75deg)",
+          },
+          "75%": {
+            transform: "translatex(-140%) rotate(-75deg)",
+          },
+        },
+        ball: {
+          "15%": {
+            transform: "translatex(-130%) translatey(180%)",
+          },
+          "25%": {
+            transform: "translatex(-150%) translatey(200%)",
+          },
+          "40%": {
+            transform: "translatex(-140%) translatey(60%)",
+          },
+          "50%": {
+            transform: "translatex(-140%) translatey(20%)",
+          },
+          "65%": {
+            transform: "translatex(-30%) translatey(170%)",
+          },
+          "75%": {
+            transform: "translatex(0) translatey(200%)",
+          },
+          "90%": {
+            transform: "translatex(0) translatey(60%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 3s ease-in-out  infinite",
+        frontBat: "frontBat 3s infinite",
+        backBat: "backBat 3s infinite",
+        ball: "ball 3s infinite",
       },
     },
   },
