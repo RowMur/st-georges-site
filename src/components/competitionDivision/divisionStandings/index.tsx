@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { divisionStandingType } from "@/types/division";
-import fetchDivisionStandings from "@/modules/fetchDivisionStandings";
+import fetchDivisionStandings from "@/modules/fetchData/fetchDivisionStandings";
 import PlaceholderTable from "../placeholderTable";
 
 interface DivisionStandingsProps {

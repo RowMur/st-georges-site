@@ -66,7 +66,7 @@ const Navbar = ({
                   cambridgeCompetitions.map((e) => (
                     <ListItem
                       key={e.id}
-                      href={"/localLeagues/competitions/" + e.id}
+                      href={"/localLeagues/" + e.id}
                       title={e.name}
                     />
                   ))}
@@ -98,7 +98,7 @@ const Navbar = ({
                   elyCompetitions.map((e) => (
                     <ListItem
                       key={e.id}
-                      href={"/localLeagues/competitions/" + e.id}
+                      href={"/localLeagues/" + e.id}
                       title={e.name}
                     />
                   ))}

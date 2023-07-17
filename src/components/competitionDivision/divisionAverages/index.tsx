@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { divisionAverageType } from "@/types/division";
-import fetchDivisionAverages from "@/modules/fetchDivisionAverages";
+import fetchDivisionAverages from "@/modules/fetchData/fetchDivisionAverages";
 import PlaceholderTable from "../placeholderTable";
 
 interface DivisionAveragesProps {
@@ -37,10 +37,12 @@ const DivisionAverages = ({ id }: DivisionAveragesProps) => {
               <>
                 {e.club.includes("St George") && (
                   <tr key={e.userId} className="bg-white">
-                    <td>{e.name}</td>
-                    <td>{e.team}</td>
-                    <td>{e.percentage}%</td>
-                    <td>{e.played}</td>
+                    <a href={`/localLeagues/${e.competitionId}/${e.userId}`}>
+                      <td>{e.name}</td>
+                      <td>{e.team}</td>
+                      <td>{e.percentage}%</td>
+                      <td>{e.played}</td>
+                    </a>
                   </tr>
                 )}
               </>

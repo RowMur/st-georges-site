@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { divisionDoublesAverageType } from "@/types/division";
-import fetchDivisionDoublesAverages from "@/modules/fetchDivisionDoublesAverages";
+import fetchDivisionDoublesAverages from "@/modules/fetchData/fetchDivisionDoublesAverages";
 import PlaceholderTable from "../placeholderTable";
 
 interface DivisionDoublesAveragesProps {

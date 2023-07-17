@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { divisionPotmType } from "@/types/division";
-import fetchDivisionPotms from "@/modules/fetchDivisionPotms";
+import fetchDivisionPotms from "@/modules/fetchData/fetchDivisionPotms";
 import PlaceholderTable from "../placeholderTable";
 
 interface DivisionPotmsProps {

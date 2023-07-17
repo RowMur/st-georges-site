@@ -7,7 +7,7 @@ import Wave from "./svgs/Wave";
 import Navbar from "./Navbar";
 import SidebarNav from "./sidebarNav";
 import { competitionType } from "@/types/competition";
-import fetchCompetitions from "@/modules/fetchCompetitions";
+import fetchCompetitions from "@/modules/fetchData/fetchCompetitions";
 
 const Header = () => {
   const [sideNavOpen, setSideNavOpen] = useState<boolean>(false);
