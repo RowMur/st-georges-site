@@ -7,7 +7,7 @@ const Practices = () => {
     <>
       <div className="bg-white px-2">
         <div className="max-w-7xl mx-auto grid place-items-center px-4 py-12 lg:py-36 xl:py-48">
-          <div className="flex flex-col-reverse lg:flex-row justify-between lg:gap-40 px-20">
+          <div className="flex flex-col-reverse lg:flex-row justify-between lg:gap-40">
             <div className="w-64 md:w-96 flex flex-col justify-center mx-auto">
               <TableGraphic />
             </div>
