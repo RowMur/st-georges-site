@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-white sticky top-0">
+      <div className="bg-white top-0">
         <div className="flex p-8 max-w-7xl justify-between mx-auto">
           <a href="/">
             <Image

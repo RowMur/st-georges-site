@@ -7,7 +7,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Label,
 } from "recharts";
 import {
   competitionPlayerType,
@@ -35,7 +34,6 @@ const SortResults = (results: resultType[]) => {
     resultsArr = resultsArr.concat(e.results);
   });
   resultsArr.sort(CompareMatches);
-  console.log(resultsArr);
   return resultsArr;
 };
 
@@ -44,7 +42,7 @@ const RankingChart = ({ player }: RankingChartProps) => {
     <>
       {player && (
         <AreaChart
-          width={1000}
+          width={300}
           height={400}
           data={SortResults(player.results).map((e, index) => ({
             match: index + 1,
