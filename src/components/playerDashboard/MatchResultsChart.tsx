@@ -40,29 +40,28 @@ const exportResults = (results: resultType[]) => {
   });
 
   const sortedData = data.sort(compareCounts);
-  console.log(sortedData);
   return sortedData;
 };
 
 const MatchResultsChart = ({ player }: MatchResultsChartProps) => {
   return (
-    <>
-      {player && (
-        <PieChart width={500} height={500}>
+    <ResponsiveContainer height="100%" width="100%">
+      <PieChart width={500} height={300}>
+        {player && (
           <Pie
             dataKey="value"
             isAnimationActive={false}
             data={exportResults(player?.results)}
             cx="50%"
             cy="50%"
-            outerRadius={80}
+            className="outline-none"
             fill="#78A6C8"
             label
           />
-          <Tooltip />
-        </PieChart>
-      )}
-    </>
+        )}
+        <Tooltip />
+      </PieChart>
+    </ResponsiveContainer>
   );
 };
 

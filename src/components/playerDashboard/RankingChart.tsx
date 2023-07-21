@@ -38,9 +38,9 @@ const SortResults = (results: resultType[]) => {
 };
 
 const RankingChart = ({ player }: RankingChartProps) => {
-  return (
-    <>
-      {player && (
+  if (player) {
+    return (
+      <ResponsiveContainer height={"100%"} width={"100%"}>
         <AreaChart
           width={300}
           height={400}
@@ -66,9 +66,9 @@ const RankingChart = ({ player }: RankingChartProps) => {
             fill="#78A6C8"
           />
         </AreaChart>
-      )}
-    </>
-  );
+      </ResponsiveContainer>
+    );
+  }
 };
 
 export default RankingChart;
