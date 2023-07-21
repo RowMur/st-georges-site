@@ -1,7 +1,10 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { divisionAverageType } from "@/types/division";
-import fetchDivisionAverages from "@/modules/fetchDivisionAverages";
+import fetchDivisionAverages from "@/modules/fetchData/fetchDivisionAverages";
 import PlaceholderTable from "../placeholderTable";
+import { useRouter } from "next/navigation";
 
 interface DivisionAveragesProps {
   id: number;
@@ -9,6 +12,7 @@ interface DivisionAveragesProps {
 
 const DivisionAverages = ({ id }: DivisionAveragesProps) => {
   const [averages, setAverages] = useState<divisionAverageType[]>();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchAverages = async () => {
@@ -36,7 +40,15 @@ const DivisionAverages = ({ id }: DivisionAveragesProps) => {
             {averages.map((e) => (
               <>
                 {e.club.includes("St George") && (
-                  <tr key={e.userId} className="bg-white">
+                  <tr
+                    key={e.userId}
+                    onClick={() =>
+                      router.push(
+                        `/localLeagues/${e.competitionId}/${e.userId}`
+                      )
+                    }
+                    className="bg-white hover:cursor-pointer"
+                  >
                     <td>{e.name}</td>
                     <td>{e.team}</td>
                     <td>{e.percentage}%</td>

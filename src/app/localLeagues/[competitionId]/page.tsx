@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Header from "@/components/Header";
 import { useParams } from "next/navigation";
 import { competitionDivisionType } from "@/types/competitionDivisions";
 import CompetitionDivision from "@/components/competitionDivision";
-import fetchCompetitionDivisions from "@/modules/fetchCompetitionsDivisions";
-import fetchCompitition from "@/modules/fetchCompetition";
+import fetchCompetitionDivisions from "@/modules/fetchData/fetchCompetitionsDivisions";
+import fetchCompitition from "@/modules/fetchData/fetchCompetition";
 import { competitionType } from "@/types/competition";
 import PlaceholderCompetitionDivision from "@/components/competitionDivision/placeholderCompetitiveDivision";
 
@@ -38,9 +37,8 @@ const CompetitionPage = () => {
 
   return (
     <div className="bg-grey min-h-screen">
-      <Header />
       {competition ? (
-        <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter mt-8 md:mt-12 lg:mt-24 text-center">
+        <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter pt-8 md:pt-12 lg:pt-24 text-center">
           {competition?.name}
         </p>
       ) : (

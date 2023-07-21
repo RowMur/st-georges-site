@@ -7,7 +7,7 @@ import Wave from "./svgs/Wave";
 import Navbar from "./Navbar";
 import SidebarNav from "./sidebarNav";
 import { competitionType } from "@/types/competition";
-import fetchCompetitions from "@/modules/fetchCompetitions";
+import fetchCompetitions from "@/modules/fetchData/fetchCompetitions";
 
 const Header = () => {
   const [sideNavOpen, setSideNavOpen] = useState<boolean>(false);
@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-white sticky top-0">
+      <div className="bg-white top-0">
         <div className="flex p-8 max-w-7xl justify-between mx-auto">
           <a href="/">
             <Image

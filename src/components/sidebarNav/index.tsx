@@ -39,7 +39,7 @@ const SidebarNav = ({
             <div className="py-4">
               {cambridgeCompetitions &&
                 cambridgeCompetitions.map((e) => (
-                  <a key={e.id} href={"/localLeagues/competitions/" + e.id}>
+                  <a key={e.id} href={"/localLeagues/" + e.id}>
                     <p className="my-2 text-sm leading-tight text-blue">
                       {e.name}
                     </p>
@@ -49,7 +49,7 @@ const SidebarNav = ({
             <div className="py-4">
               {elyCompetitions &&
                 elyCompetitions.map((e) => (
-                  <a key={e.id} href={"/localLeagues/competitions/" + e.id}>
+                  <a key={e.id} href={"/localLeagues/" + e.id}>
                     <p className="my-2 text-sm leading-tight text-blue">
                       {e.name}
                     </p>

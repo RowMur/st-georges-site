@@ -10,7 +10,6 @@ import Popup from "@/components/Popup";
 const Home = () => {
   return (
     <div className="bg-grey">
-      <Header />
       <Hero />
       <Practices />
       <LocalLeagues />
