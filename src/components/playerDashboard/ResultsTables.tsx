@@ -26,7 +26,9 @@ const ResultsTables = ({ player }: ResultsTableProps) => {
                   {e.results.map((result) => {
                     return (
                       <tr key={result.setId} className="bg-white">
-                        <td className="text-left">{result.opponent.value}</td>
+                        <td className="text-left">
+                          {result.opponent.value ?? "Bye"}
+                        </td>
                         <td>{result.for}</td>
                         <td>{result.against}</td>
                         <td
