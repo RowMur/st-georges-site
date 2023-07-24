@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="rotate-180">
           <Wave color="white" />
         </div>
-        <div className="flex flex-col gap-4 sm:flex-row p-8 max-w-7xl justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row p-8 max-w-4xl justify-between mx-auto">
           <div className="sm:w-2/5">
             <h6 className="text-md font-bold text-darkBlue">Where?</h6>
             <p className="text-sm text-blue">

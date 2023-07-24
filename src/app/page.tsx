@@ -15,7 +15,7 @@ const Home = () => {
       <LocalLeagues />
       <Where />
       <Contact />
-      <Popup />
+      {/* <Popup /> */}
     </div>
   );
 };
