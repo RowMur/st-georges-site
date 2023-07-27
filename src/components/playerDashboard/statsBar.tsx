@@ -19,7 +19,7 @@ const StatsBar = ({ player }: StatsBarProps) => {
   return (
     <>
       {player && (
-        <div className="bg-white flex flex-wrap p-4 gap-4 rounded-xl justify-evenly shadow-lg">
+        <div className="bg-white flex flex-wrap p-4 gap-4 rounded-xl justify-evenly">
           <div>
             <StatHeader
               text={
@@ -31,7 +31,7 @@ const StatsBar = ({ player }: StatsBarProps) => {
               }
             />
             <StatComment
-              text={`${player.average.won}/${player.average.played}`}
+              text={`Won ${player.average.won}/${player.average.played}`}
             />
           </div>
           <div>
