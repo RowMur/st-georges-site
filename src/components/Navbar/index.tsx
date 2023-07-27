@@ -78,7 +78,7 @@ const Navbar = ({
                     className="flex h-full w-full select-none flex-col justify-start rounded-md bg-gradient-to-b from-muted/50 to-muted p-3 pr-6 no-underline outline-none focus:shadow-md"
                     href={
                       elyCompetitions
-                        ? "/localLeagues/competitions/" + elyCompetitions[0].id
+                        ? "/localLeagues/" + elyCompetitions[0].id
                         : ""
                     }
                   >
