@@ -32,7 +32,7 @@ const compareCounts = (a: dataType, b: dataType) => {
   }
 };
 
-const exportGameResults = (results: resultType[]) => {
+export const exportGameResults = (results: resultType[]) => {
   const gamesMap = new Map();
   results.forEach((resultGroup) => {
     resultGroup.results.forEach((match) => {

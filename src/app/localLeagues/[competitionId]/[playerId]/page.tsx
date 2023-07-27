@@ -8,6 +8,7 @@ import RankingChart from "@/components/playerDashboard/RankingChart";
 import MatchResultsChart from "@/components/playerDashboard/MatchResultsChart";
 import GameResultsChart from "@/components/playerDashboard/GameResultsChart";
 import ResultsTables from "@/components/playerDashboard/ResultsTables";
+import StatsBar from "@/components/playerDashboard/statsBar";
 
 const PlayerPage = () => {
   const [player, setPlayer] = useState<competitionPlayerType>();
@@ -26,7 +27,7 @@ const PlayerPage = () => {
   }, [playerId, competitionId]);
 
   return (
-    <div className="my-20 flex flex-col w-11/12 mx-auto">
+    <div className="my-20 flex flex-col w-11/12 max-w-7xl mx-auto">
       <div className="mb-8">
         <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter text-center">
           {player?.name}
@@ -35,6 +36,7 @@ const PlayerPage = () => {
           {player?.competition.value}
         </p>
       </div>
+      <StatsBar player={player} />
       <ResultsTables player={player} />
       {[
         {

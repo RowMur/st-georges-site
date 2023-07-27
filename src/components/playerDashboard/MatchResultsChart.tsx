@@ -6,7 +6,7 @@ interface MatchResultsChartProps {
   player: competitionPlayerType | undefined;
 }
 
-interface dataType {
+export interface dataType {
   name: string;
   value: number;
 }
@@ -21,7 +21,7 @@ const compareCounts = (a: dataType, b: dataType) => {
   }
 };
 
-const exportResults = (results: resultType[]) => {
+export const exportResults = (results: resultType[]) => {
   const resultsMap = new Map();
   results.forEach((e) => {
     e.results.forEach((match) => {
