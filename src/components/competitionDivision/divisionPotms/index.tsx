@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { divisionPotmType } from "@/types/division";
 import fetchDivisionPotms from "@/modules/fetchData/fetchDivisionPotms";
 import PlaceholderTable from "../placeholderTable";
+import { useParams, useRouter } from "next/navigation";
 
 interface DivisionPotmsProps {
   id: number;
@@ -9,6 +10,8 @@ interface DivisionPotmsProps {
 
 const DivisionPotms = ({ id }: DivisionPotmsProps) => {
   const [potms, setPotms] = useState<divisionPotmType[]>();
+  const router = useRouter();
+  const { competitionId } = useParams();
 
   useEffect(() => {
     const fetchAverages = async () => {
@@ -34,7 +37,13 @@ const DivisionPotms = ({ id }: DivisionPotmsProps) => {
             {potms.map((e) => (
               <>
                 {e.club.includes("St George") && (
-                  <tr key={e.userId} className="bg-white">
+                  <tr
+                    key={e.userId}
+                    onClick={() =>
+                      router.push(`/localLeagues/${competitionId}/${e.userId}`)
+                    }
+                    className="bg-white hover:cursor-pointer"
+                  >
                     <td>{e.name}</td>
                     <td>{e.team}</td>
                     <td>{e.played}</td>
