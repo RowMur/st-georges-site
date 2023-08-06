@@ -8,7 +8,7 @@ Having not been touched in years, my local table tennis club's website has been 
 - Used a modern design to bring some life to the site and hence the club.
 - Implemented a contact form into the site to reduce the friction of reaching out to the club.
 
-<a href="https://st-georges-site.vercel.app/" target="_blank">Live Demo</a>
+<a href="https://stgeorgesttc.vercel.app/" target="_blank">Live Demo</a>
 
 ### Technology Used
 
