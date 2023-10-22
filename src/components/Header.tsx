@@ -1,33 +1,13 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import sgLogo from "../../public/stGeorgesLogo.png";
 import Image from "next/image";
 import Wave from "./svgs/Wave";
 import Navbar from "./Navbar";
-import SidebarNav from "./sidebarNav";
-import { competitionType } from "@/types/competition";
 import fetchCompetitions from "@/modules/fetchData/fetchCompetitions";
 
-const Header = () => {
-  const [sideNavOpen, setSideNavOpen] = useState<boolean>(false);
-
-  const [cambridgeCompetitions, setCambridgeCompetitions] =
-    useState<competitionType[]>();
-  const [elyCompetitions, setElyCompetitions] = useState<competitionType[]>();
-
-  useEffect(() => {
-    const getCompetitions = async () => {
-      const cambridgeResponse = await fetchCompetitions("cambridge");
-      const elyResponse = await fetchCompetitions("elydistrict");
-
-      setCambridgeCompetitions(cambridgeResponse);
-      setElyCompetitions(elyResponse);
-    };
-
-    getCompetitions();
-  }, []);
-
+const Header = async () => {
+  const cambridgeCompetitions = await fetchCompetitions("cambridge")
+  const elyCompetitions = await fetchCompetitions("elydistrict")
   return (
     <>
       <div className="bg-white top-0">
@@ -39,17 +19,7 @@ const Header = () => {
               className="h-12 sm:h-16 w-auto"
             />
           </a>
-          <Navbar
-            setSideNavOpen={setSideNavOpen}
-            cambridgeCompetitions={cambridgeCompetitions}
-            elyCompetitions={elyCompetitions}
-          />
-          <SidebarNav
-            sideNavOpen={sideNavOpen}
-            setSideNavOpen={setSideNavOpen}
-            cambridgeCompetitions={cambridgeCompetitions}
-            elyCompetitions={elyCompetitions}
-          />
+          <Navbar cambridgeCompetitions={cambridgeCompetitions} elyCompetitions={elyCompetitions} />
         </div>
       </div>
       <Wave color="white" />
