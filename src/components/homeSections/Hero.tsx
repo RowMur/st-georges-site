@@ -20,9 +20,9 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto grid place-items-center py-12 lg:py-36 xl:py-48">
         <div className="flex flex-col lg:flex-row justify-between items-center w-4/5 gap-8">
           <div>
-            <p className="text-center lg:text-left font-black text-5xl lg:text-6xl text-darkBlue leading-tight tracking-tighter py-2">
-              Come and play table tennis.
-            </p>
+            <h1 className="text-center lg:text-left font-black text-5xl lg:text-6xl text-darkBlue leading-tight tracking-tighter py-2">
+              St Georges Table Tennis Club
+            </h1>
             <div className="py-2">
               {[
                 "St George's Church Hall, Cambridge",
