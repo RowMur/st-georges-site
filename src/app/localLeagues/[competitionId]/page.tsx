@@ -1,72 +1,26 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
-import { competitionDivisionType } from "@/types/competitionDivisions";
-import CompetitionDivision from "@/components/competitionDivision";
+import React from "react";
 import fetchCompetitionDivisions from "@/modules/fetchData/fetchCompetitionsDivisions";
 import fetchCompitition from "@/modules/fetchData/fetchCompetition";
-import { competitionType } from "@/types/competition";
-import PlaceholderCompetitionDivision from "@/components/competitionDivision/placeholderCompetitiveDivision";
+import CompetitionPageComponent from "@/components/CompetitionPage";
 
-const CompetitionPage = () => {
-  const [competitionDivisions, setCompetitionDivisions] =
-    useState<competitionDivisionType[]>();
-  const [competition, setCompetition] = useState<competitionType>();
+export type CompetitionPageProps = {
+  params: {
+    competitionId: string;
+  };
+};
 
-  const { competitionId } = useParams();
-
-  useEffect(() => {
-    if (!competitionId) {
-      return;
-    }
-
-    const getDivisions = async () => {
-      const response = await fetchCompetitionDivisions(competitionId);
-      setCompetitionDivisions(response);
-    };
-
-    const getCompetition = async () => {
-      const response = await fetchCompitition(competitionId);
-      setCompetition(response);
-    };
-
-    getCompetition();
-    getDivisions();
-  }, [competitionId]);
+const CompetitionPage = async ({ params }: CompetitionPageProps) => {
+  const competitionDivisions = await fetchCompetitionDivisions(
+    params.competitionId
+  );
+  const competition = await fetchCompitition(params.competitionId);
 
   return (
-    <div className="bg-grey min-h-screen">
-      {competition ? (
-        <p className="font-bold text-3xl lg:text-4xl text-darkBlue leading-tight tracking-tighter pt-8 md:pt-12 lg:pt-24 text-center">
-          {competition?.name}
-        </p>
-      ) : (
-        <div className="h-8 bg-white mt-8 md:mt-12 lg:mt-24 mx-auto w-96 rounded-full animate-pulse" />
-      )}
-      {competitionDivisions ? (
-        competitionDivisions?.map((e) => {
-          return (
-            <div
-              key={e.id}
-              className="max-w-7xl w-5/6 mx-auto grid place-items-center md:p-12"
-            >
-              <p className="font-bold text-2xl lg:text-3xl text-blue leading-tight mt-8 mb-4">
-                {e.name} Division
-              </p>
-              <CompetitionDivision id={e.id} />
-            </div>
-          );
-        })
-      ) : (
-        <div className="max-w-7xl w-5/6 mx-auto grid place-items-center md:p-12">
-          <p className="font-bold text-2xl lg:text-3xl text-blue leading-tight mt-8 mb-4">
-            Division
-          </p>
-          <PlaceholderCompetitionDivision />
-        </div>
-      )}
-    </div>
+    <CompetitionPageComponent
+      competition={competition}
+      competitionDivisions={competitionDivisions}
+      params={params}
+    />
   );
 };
 

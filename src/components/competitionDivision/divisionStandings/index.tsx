@@ -1,7 +1,4 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { divisionStandingType } from "@/types/division";
+import React from "react";
 import fetchDivisionStandings from "@/modules/fetchData/fetchDivisionStandings";
 import PlaceholderTable from "../placeholderTable";
 
@@ -9,17 +6,8 @@ interface DivisionStandingsProps {
   id: number;
 }
 
-const DivisionStandings = ({ id }: DivisionStandingsProps) => {
-  const [standings, setStandings] = useState<divisionStandingType[]>();
-
-  useEffect(() => {
-    const fetchStandings = async () => {
-      const standingsResponse = await fetchDivisionStandings(id);
-      setStandings(standingsResponse);
-    };
-
-    fetchStandings();
-  }, [id]);
+const DivisionStandings = async ({ id }: DivisionStandingsProps) => {
+  const standings = await fetchDivisionStandings(id);
 
   return (
     <div className="h-full">

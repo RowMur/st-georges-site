@@ -1,61 +1,46 @@
-import React, { useState, useEffect } from "react";
-import { divisionPotmType } from "@/types/division";
+import React from "react";
 import fetchDivisionPotms from "@/modules/fetchData/fetchDivisionPotms";
-import PlaceholderTable from "../placeholderTable";
-import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
+import { CompetitionPageProps } from "@/app/localLeagues/[competitionId]/page";
 
-interface DivisionPotmsProps {
+type DivisionPotmsProps = {
   id: number;
-}
+} & CompetitionPageProps;
 
-const DivisionPotms = ({ id }: DivisionPotmsProps) => {
-  const [potms, setPotms] = useState<divisionPotmType[]>();
-  const router = useRouter();
-  const { competitionId } = useParams();
-
-  useEffect(() => {
-    const fetchAverages = async () => {
-      const averagesResponse = await fetchDivisionPotms(id);
-      setPotms(averagesResponse);
-    };
-
-    fetchAverages();
-  }, [id]);
+const DivisionPotms = async ({ id, params }: DivisionPotmsProps) => {
+  const potms = await fetchDivisionPotms(id);
 
   return (
     <div className="h-full">
-      {potms ? (
-        <table className="text-xs md:text-base w-full h-full bg-white">
-          <thead>
-            <tr>
-              <th>Player</th>
-              <th>Team</th>
-              <th>POTMS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {potms.map((e) => (
-              <>
-                {e.club.includes("St George") && (
-                  <tr
-                    key={e.userId}
-                    onClick={() =>
-                      router.push(`/localLeagues/${competitionId}/${e.userId}`)
-                    }
-                    className="bg-white hover:cursor-pointer"
-                  >
-                    <td>{e.name}</td>
-                    <td>{e.team}</td>
-                    <td>{e.played}</td>
-                  </tr>
-                )}
-              </>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <PlaceholderTable />
-      )}
+      <table className="text-xs md:text-base w-full h-full bg-white">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Team</th>
+            <th>POTMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {potms.map((e) => (
+            <>
+              {e.club.includes("St George") && (
+                <tr key={e.userId} className="bg-white">
+                  <td>
+                    <Link
+                      className="hover:cursor-pointer"
+                      href={`/localLeagues/${params.competitionId}/${e.userId}`}
+                    >
+                      {e.name}{" "}
+                    </Link>
+                  </td>
+                  <td>{e.team}</td>
+                  <td>{e.played}</td>
+                </tr>
+              )}
+            </>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
