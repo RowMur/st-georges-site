@@ -7,10 +7,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "./navigationMenu";
 import { competitionType } from "@/types/competition";
 import { Dispatch, SetStateAction } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from "next/link";
 
 interface NavbarProps {
   setSideNavOpen: Dispatch<SetStateAction<boolean>>;
@@ -35,6 +37,13 @@ const TopNavbar = ({
           >
             <GiHamburgerMenu />
           </button>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/club-calendar">
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Club Calendar
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden sm:inline-block">
           <NavigationMenuTrigger>Local Leagues</NavigationMenuTrigger>
