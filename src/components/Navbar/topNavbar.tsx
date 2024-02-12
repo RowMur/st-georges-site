@@ -38,7 +38,7 @@ const TopNavbar = ({
             <GiHamburgerMenu />
           </button>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="hidden sm:inline-block">
           <Link href="/club-calendar">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Club Calendar

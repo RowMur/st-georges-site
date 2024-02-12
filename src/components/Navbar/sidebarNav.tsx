@@ -23,7 +23,7 @@ const SidebarNav = ({
           (sideNavOpen ? "w-3/4" : "w-0")
         }
       >
-        <div className={"py-12 px-8"}>
+        <div className="py-12 px-8 flex flex-col gap-2">
           <button
             onClick={() => {
               setSideNavOpen(false);
@@ -33,9 +33,12 @@ const SidebarNav = ({
             <ImCross />
           </button>
           <div className="bg-white rounded-md p-2">
-            <p className="text-center text-lg font-bold text-darkBlue">
-              Local Leagues
-            </p>
+            <a href="club-calendar">
+              <p className="text-lg font-bold text-darkBlue">Club Calendar</p>
+            </a>
+          </div>
+          <div className="bg-white rounded-md p-2">
+            <p className="text-lg font-bold text-darkBlue">Local Leagues</p>
             <div className="py-4">
               {cambridgeCompetitions &&
                 cambridgeCompetitions.map((e) => (
