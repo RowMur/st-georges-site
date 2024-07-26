@@ -15,7 +15,7 @@ export const POST = async (request: Request) => {
 
     await sendgrid.send({
       from: process.env.EMAIL,
-      to: ["stgeorgesttclub@gmail.com", "mike_johnston@ntlworld.com", "jandhnewman@btinternet.com"],
+      to: ["stgeorgesttclub@gmail.com", "mike_johnston@ntlworld.com", "jandhnewman@btinternet.com", "rowanomurray@gmail.com"],
       text: message,
       subject: "From Website: " + subject,
       replyTo: email,
