@@ -57,29 +57,33 @@ const Contact = () => {
 
     if (isValidForm) {
       setButtonText("Sending...");
-      const res = await fetch("/api/sendgrid", {
-        body: JSON.stringify({
-          email: email,
-          message: message,
-          subject: subject,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      });
+      try {
+        const res = await fetch("/api/sendgrid", {
+          body: JSON.stringify({
+            email: email,
+            message: message,
+            subject: subject,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+        });
 
-      const { error } = await res.json();
-      if (error) {
-        console.log(error);
+        const { error } = await res.json();
+        if (error) {
+          throw new Error("received error");
+        }
+        setShowSuccessMessage(true);
+        setShowFailureMessage(false);
+        setEmail("");
+        setMessage("");
+        setSubject("");
+      } catch {
+        setButtonText("Send");
+        setShowFailureMessage(true);
         return;
       }
-      setShowSuccessMessage(true);
-      setShowFailureMessage(false);
-      setButtonText("Send");
-      setEmail("");
-      setMessage("");
-      setSubject("");
     }
   };
 
